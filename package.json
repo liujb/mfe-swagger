@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/liujb/mfe-swagger"
   },
   "keywords": [
     "nodejs",
