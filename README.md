@@ -149,7 +149,6 @@ yarn && npm run example
 ## 依赖库
 
 1. express
-2. mfe-logger
 2. swagger-jsdoc
 2. swagger-ui-express
 2. yamljs
