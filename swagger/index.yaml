@@ -1,0 +1,62 @@
+swagger: "2.0"
+info:
+  version: ''
+  title: "活动系统API文档"
+externalDocs:
+  description: "礼品配置"
+  url: "http://swagger.io"
+host: '127.0.0.1:9025'
+schemes:
+- 'http'
+tags:
+- name: "activity"
+  description: "活动主体"
+paths:
+  /activity/list:
+    get:
+      tags:
+      - "activity"
+      summary: "活动列表"
+      parameters:
+      - name: "pageSize"
+        in: "query"
+        description: "不能为空"
+        required: true
+        type: number
+      responses:
+        200:
+          description: '成功'
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  /activity/details:
+    get:
+      tags:
+      - "activity"
+      summary: "活动详情"
+      description: "根据活动ID获取活动详情"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "activityId"
+        in: "query"
+        description: "活动ID不能为空"
+        required: true
+        type: "number"
+      responses:
+        200:
+          description: "成功"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        404:
+          description: "路径错误"
+definitions:
+  ApiResponse:
+    type: "object"
+    properties:
+      errorCode:
+        type: "integer"
+        format: "int32"
+      errorMsg:
+        type: "string"
+      data:
+        type: "object"
